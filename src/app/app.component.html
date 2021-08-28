@@ -1,0 +1,20 @@
+<div class="col-sm-12  m-3">
+  <div class="text-center">
+    <h3> Dynamic form generator</h3>
+    <p>
+      Form generation from json object :)
+    </p>
+  </div>
+  <div class="card m-3">
+    <div class="card-body pt-3">
+      <form [formGroup]="form">
+        <form-builder (formData)="onSubmited($event)" [formGroup]="form" [fields]="getFields()"></form-builder>
+      </form>
+    </div>
+  </div>
+
+  <div class="alert alert-dark" role="alert">
+    {{form?.value|json}}
+  </div>
+
+</div>
